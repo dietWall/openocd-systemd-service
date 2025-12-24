@@ -1,0 +1,13 @@
+[Unit]
+Description=Runs openocd with arguments file placed at %i
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/read_file_and_exec.sh -f %i
+PIDFile=/var/run/openocd/%i.pid
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

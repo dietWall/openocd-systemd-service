@@ -1,0 +1,8 @@
+openocd-service (0.0.1) trixie; Urgency=medium
+
+  * Initial packaging work with dpkg-buildpackage.
+  contains a systemd-service template
+
+  * used to run openocd automatically in different configurations
+
+ -- Dietrich Wall <dietrich7@gmx.de>  Wed, 24 Dec 2025 09:19:24 +0000
