@@ -6,7 +6,8 @@ while getopts 'df:h' opt; do
   case "$opt" in
     f)
         echo "$(basename $0): Reading file: $OPTARG"
-        openocd_args=$(cat "$OPTARG")
+        PATH_TO_FILE=$(systemd-escape -u -p "$OPTARG")
+        openocd_args=$(cat "$PATH_TO_FILE")
     ;;
     d)
         echo "$(basename $0): Reading file: default_args.txt"

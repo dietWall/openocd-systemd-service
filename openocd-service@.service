@@ -4,8 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/read_file_and_exec.sh -f %i
-PIDFile=/var/run/openocd/%i.pid
+ExecStart=/usr/bin/openocd-starter -f %i
 Restart=on-failure
 RestartSec=5
 
