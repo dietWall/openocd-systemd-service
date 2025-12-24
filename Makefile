@@ -8,7 +8,10 @@ all:
 	mkdir -p openocd-service_0.0.1/etc/systemd/system
 	cp openocd-service@.service openocd-service_0.0.1/etc/systemd/system/openocd-service@.service
 	cp default_args.txt openocd-service_0.0.1/etc/openocd-args.txt
-	dpkg-deb --root-owner-group --build openocd-service_0.0.1 
+	mkdir -p openocd-service_0.0.1/DEBIAN
+	cp control openocd-service_0.0.1/DEBIAN/control
+	dpkg-deb --root-owner-group --build openocd-service_0.0.1
+	
 
 uninstall:
 	rm -f $(DESTDIR)/usr/bin/openocd-starter
@@ -19,4 +22,3 @@ clean:
 	rm -rf *.tar.gz
 	rm -rf *.deb
 	rm -rf openocd-service_0.0.1/
-	
