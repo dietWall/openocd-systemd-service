@@ -13,6 +13,12 @@ jobs:
    - name: Containerized Build
      uses: ./.github/workflows/dockerbuild
 
+   - name: upload debian package
+     uses: actions/upload-artifact@v4
+     with:
+       name: debian package
+       path: build/openocd-service_0.0.1.deb
+
 # runs:
 #   using: 'docker'
 #   image: 'Dockerfile'
