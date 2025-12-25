@@ -1,0 +1,14 @@
+# action.yml
+name: 'Build in docker'
+description: 'Builds the debian package for the service in a docker container'
+
+on: [push]
+jobs:
+ build:
+ runs-on: ubuntu-latest
+steps:
+ - uses: actions/checkout@v5
+
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'

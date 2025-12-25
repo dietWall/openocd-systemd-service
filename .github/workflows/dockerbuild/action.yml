@@ -1,5 +1,5 @@
 # action.yml
-name: 'Build in docker'
+name: 'Dockerbuild'
 description: 'Builds the debian package for the service in a docker container'
 
 runs:
