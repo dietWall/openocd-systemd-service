@@ -1,0 +1,7 @@
+# action.yml
+name: 'Dockerbuild'
+description: 'Builds the debian package for the service in a docker container'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

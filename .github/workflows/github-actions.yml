@@ -1,0 +1,27 @@
+# action.yml
+name: 'Build in docker'
+description: 'Builds the debian package for the service in a docker container'
+
+on: [push]
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v4
+   
+   - name: Containerized Build
+     uses: ./.github/workflows/dockerbuild
+  
+   - name: show directory
+     run: ls -la ${{ github.workspace }}
+
+   - name: upload debian package
+     uses: actions/upload-artifact@v4
+     with:
+       name: openocd-service_0.0.1.deb
+       path: build/openocd-service_0.0.1.deb
+
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
