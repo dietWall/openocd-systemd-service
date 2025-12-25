@@ -19,7 +19,7 @@ jobs:
    - name: upload debian package
      uses: actions/upload-artifact@v4
      with:
-       name: debian package
+       name: openocd-service_0.0.1.deb
        path: build/openocd-service_0.0.1.deb
 
 # runs:
