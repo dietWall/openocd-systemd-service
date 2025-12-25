@@ -12,6 +12,9 @@ jobs:
    
    - name: Containerized Build
      uses: ./.github/workflows/dockerbuild
+  
+   - name: show directory
+     run: ls -la ${{ github.workspace }}
 
    - name: upload debian package
      uses: actions/upload-artifact@v4
